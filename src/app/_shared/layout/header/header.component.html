@@ -1,3 +1,42 @@
-<p>
-  header works!
-</p>
+<!-- Navbar-->
+<header class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-scroll-header>
+  <div class="container"><a class="navbar-brand ms-3 ms-xl-4 logo" href="real-estate-home-v1.html"><img
+        class="d-block rounded-circle" src="./assets/img/logo/THE WECHSEL MANAGEMENT (LOGO) BLUE 2-17.jpg" width="50"
+        alt="WeChSell"></a>
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+      <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
+        <!-- Menu items-->
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"
+            role="button" aria-expanded="false">خانه</a>
+
+
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">املاک</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="real-estate-catalog-rent.html">ملک برای اجاره</a></li>
+            <li><a class="dropdown-item" href="real-estate-catalog-sale.html">ملک برای فروش</a></li>
+            <li><a class="dropdown-item" href="real-estate-single-v1.html">جزئیات - نسخه 1</a></li>
+            <li><a class="dropdown-item" href="real-estate-single-v2.html">جزئیات - نسخه 2</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">مقالات</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="real-estate-catalog-rent.html">ملک برای اجاره</a></li>
+          <li><a class="dropdown-item" href="real-estate-catalog-sale.html">ملک برای فروش</a></li>
+          <li><a class="dropdown-item" href="real-estate-single-v1.html">جزئیات - نسخه 1</a></li>
+          <li><a class="dropdown-item" href="real-estate-single-v2.html">جزئیات - نسخه 2</a></li>
+        </ul>
+      </li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active"
+          role="button" aria-expanded="false">تماس با ما</a>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/about']" routerLinkActive="router-link-active"
+          role="button" aria-expanded="false">درباره ما</a>
+      </ul>
+    </div>
+  </div>
+</header>

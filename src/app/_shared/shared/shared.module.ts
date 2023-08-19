@@ -10,7 +10,6 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule,
     AppRoutingModule,
   ],
   declarations: [], 
@@ -18,7 +17,6 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule,
     AppRoutingModule,
   ]
 })

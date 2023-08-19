@@ -1,7 +1,7 @@
 // export const DomainName = 'https://dr-payamabolhassani.com' ;
 export const DomainUrl = 'https://localhost:44300';
 
-export const DomainName = DomainUrl + '/admin/v1/';
+export const DomainName = DomainUrl + '/site/v1/';
 export const TeamOriginImagePath = DomainUrl + '/images/team/origin/';
 export const TeamCompressImagePath = DomainUrl + '/images/team/compressed/';
 export const BannerCompressImagePath = DomainUrl + '/images/banner/compressed/';
