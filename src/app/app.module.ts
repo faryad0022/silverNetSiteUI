@@ -1,21 +1,18 @@
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule, isDevMode } from '@angular/core';
-import { LayoutModule } from './_shared/layout/layout.module';
-import { AppComponent } from './app.component';
-import { SharedModule } from './_shared/shared/shared.module';
-import { NgxUiLoaderConfig, POSITION, SPINNER, PB_DIRECTION, NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
-import { ToastrModule } from 'ngx-toastr';
-import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { StoreModule } from '@ngrx/store';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, PB_DIRECTION, POSITION, SPINNER } from 'ngx-ui-loader';
 import { Interceptor } from './_config/interceptor/interceptor';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { LayoutModule } from './_shared/layout/layout.module';
+import { SharedModule } from './_shared/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
-import { PropertTypeComponent } from './_widgets/propert-type/propert-type.component';
-import { RealestateServicesComponent } from './_widgets/realestate-services/realestate-services.component';
+import { AppComponent } from './app.component';
+
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "red",
   bgsPosition: POSITION.bottomCenter,

@@ -1,27 +1,30 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
+import { NgModule } from '@angular/core';
 import { HomeRoutingModule } from './home-routing.module';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { LatestPropertyComponent } from 'src/app/_widgets/latest-property/latest-property.component';
-import { PropertTypeComponent } from 'src/app/_widgets/propert-type/propert-type.component';
-import { RealestateServicesComponent } from 'src/app/_widgets/realestate-services/realestate-services.component';
-import { LatestBlogComponent } from 'src/app/_widgets/latest-blog/latest-blog.component';
-import { BannerComponent } from 'src/app/_widgets/banner/banner.component';
+import { HomeComponent } from './home.component';
+import { BannerWidgetComponent } from 'src/app/_widgets/banner-widget/banner-widget.component';
+import { PropertyTypeWidgetComponent } from 'src/app/_widgets/property-type-widget/property-type-widget.component';
+import { RealEstateServiceWidgetComponent } from 'src/app/_widgets/real-estate-service-widget/real-estate-service-widget.component';
+import { LatestBlogWidgetComponent } from 'src/app/_widgets/latest-blog-widget/latest-blog-widget.component';
+import { LatestPropertyWidgetComponent } from 'src/app/_widgets/latest-property-widget/latest-property-widget.component';
 
 @NgModule({
   imports: [
     HomeRoutingModule,
     CommonModule,
-    CarouselModule,
   ],
   declarations: [
     HomeComponent,
-    LatestPropertyComponent,
-    PropertTypeComponent,
-    RealestateServicesComponent,
-    LatestBlogComponent,
-    BannerComponent
+    BannerWidgetComponent,
+    PropertyTypeWidgetComponent,
+    RealEstateServiceWidgetComponent,
+    LatestBlogWidgetComponent,
+    LatestPropertyWidgetComponent
+
   ],
+  providers:[
+    
+
+  ]
 })
 export class HomeModule { }

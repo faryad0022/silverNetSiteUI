@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AboutComponent } from './about.component';
 import { AboutRoutingModule } from './about-routing.module';
+import { AboutComponent } from './about.component';
+import { AboutWidgetComponent } from 'src/app/_widgets/about-widget/about-widget.component';
 
 @NgModule({
   imports: [
     AboutRoutingModule
   ],
-  declarations: [AboutComponent]
+  declarations: [
+    AboutWidgetComponent,
+    AboutComponent
+  ]
 })
 export class AboutModule { }

@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @NgModule({
@@ -12,12 +11,15 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     BrowserAnimationsModule,
     AppRoutingModule,
   ],
-  declarations: [], 
+  declarations: [
+  ], 
   exports: [
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+
+    
   ]
 })
 export class SharedModule { }
