@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+//animate
+@import 'node_modules/animate.css/animate.css';
+
+//TOASTR
+@import 'node_modules/ngx-toastr/toastr.css';
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
