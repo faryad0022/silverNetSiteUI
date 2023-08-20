@@ -12,3 +12,20 @@
 
 /* Importing Bootstrap SCSS file. */
 // @import 'bootstrap/scss/bootstrap';
+.banner-section{
+	position: relative;
+}
+.search-section{
+	position: relative;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 9.25rem;
+    color: #fff;
+    text-align: center;
+}

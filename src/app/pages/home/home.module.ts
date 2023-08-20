@@ -7,11 +7,13 @@ import { PropertyTypeWidgetComponent } from 'src/app/_widgets/property-type-widg
 import { RealEstateServiceWidgetComponent } from 'src/app/_widgets/real-estate-service-widget/real-estate-service-widget.component';
 import { LatestBlogWidgetComponent } from 'src/app/_widgets/latest-blog-widget/latest-blog-widget.component';
 import { LatestPropertyWidgetComponent } from 'src/app/_widgets/latest-property-widget/latest-property-widget.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   imports: [
     HomeRoutingModule,
     CommonModule,
+    CarouselModule.forRoot()
   ],
   declarations: [
     HomeComponent,

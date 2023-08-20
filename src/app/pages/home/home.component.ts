@@ -10,7 +10,6 @@ import { BannerDTO } from 'src/app/_core/data/banner/bannerDTO';
 })
 export class HomeComponent implements OnInit {
   banners!: BannerDTO[];
-  imagePathOrigin = BannerOriginImagePath;
 
   constructor(
     private bannerService:BannerService
