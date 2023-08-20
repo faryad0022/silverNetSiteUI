@@ -21,6 +21,9 @@ export const PropertyGalleryOriginImagePth = DomainUrl + '/images/gallery/origin
 export const ProfileOriginImagePth = DomainUrl + '/images/profile/origin/';
 export const ProfileCompressImagePth = DomainUrl + '/images/profile/compressed/';
 
+//Home Page
+export const HomePage = "home-data/getall";
+
 
 // Team
 export const GetAllTeamMemberPath = 'teammember/getall'
@@ -92,19 +95,19 @@ export const Property_GetFilter = "property/filter-property";
 
 
 //property gallery
-export const  PropertyGallery_GetAll = "property-gallery/getall";
-export const  PropertyGallery_Get = "property-gallery/get";
+export const PropertyGallery_GetAll = "property-gallery/getall";
+export const PropertyGallery_Get = "property-gallery/get";
 
 
 //property plan
-export const  PropertyPlan_GetAll = "property-plan/getall";
-export const  PropertyPlan_Get = "property-plan/get";
+export const PropertyPlan_GetAll = "property-plan/getall";
+export const PropertyPlan_Get = "property-plan/get";
 
 
 
 //propertyvideo
-export const  PropertyVideo_GetAll = "property-video/getall";
-export const  PropertyVideo_Get = "property-video/get";
+export const PropertyVideo_GetAll = "property-video/getall";
+export const PropertyVideo_Get = "property-video/get";
 
 
 //BlogGroup
