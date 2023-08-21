@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { homedataResolver } from './_core/_resolvers/homedata.resolver';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
   },
   {
     path: 'about',
@@ -28,7 +29,8 @@ const routes: Routes = [
   },
   {
     path:'',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
+
   },
   { path: '**', redirectTo: 'error', pathMatch: 'full' },
 

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { BannerOriginImagePath } from 'src/app/_config/pathUtility/pathTool';
 import { BannerDTO } from 'src/app/_core/data/banner/bannerDTO';
 
@@ -7,7 +8,7 @@ import { BannerDTO } from 'src/app/_core/data/banner/bannerDTO';
   templateUrl: './banner-widget.component.html',
 })
 export class BannerWidgetComponent implements OnInit {
-  @Input() banners!: BannerDTO[];
+  @Input() banners:Observable<BannerDTO[]>;
   imagePathOrigin = BannerOriginImagePath;
 
   constructor() { }

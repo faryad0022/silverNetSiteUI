@@ -12,6 +12,8 @@ const routes: Routes = [
       { path: 'list/:blogGroupId', component: BlogListComponent },
       { path: 'list', component: BlogListComponent },
       { path: 'details', component: BlogDetailsComponent },
+      { path: 'details/:blogId', component: BlogDetailsComponent },
+
       { path: '**', redirectTo: 'error' },
     ]
   },

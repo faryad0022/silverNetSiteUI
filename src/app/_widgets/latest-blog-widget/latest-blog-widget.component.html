@@ -15,47 +15,54 @@
       </ul>
     </div><a class="btn btn-link fw-normal d-none d-lg-block p-0" [routerLink]="['/blog/list']" routerLinkActive="router-link-active" >مشاهده همه <i class="fi-arrow-long-left me-2"></i></a>
   </div>
-  <div class="row g-4">
+  <div class="row g-4" *ngIf="blogs|async ; let blog;">
     <div class="col-md-6">
-      <div class="card bg-size-cover bg-position-center border-0 overflow-hidden mb-4" style="background-image: url(./assets/img/real-estate/recent/02.jpg);"><span class="img-gradient-overlay"></span>
-        <div class="card-body content-overlay pb-0"><span class="badge bg-info fs-sm">جدید</span></div>
+      <div *ngIf="blog[0]" class="card bg-size-cover bg-position-center border-0 overflow-hidden mb-4" style="background-image: url('{{imagePath + blog[0].imageName}}');"><span class="img-gradient-overlay"></span>
+        <div class="card-body content-overlay pb-0">
+          <div class="d-flex"><span class="badge bg-info fs-sm">جدید</span></div>
+        </div>
         <div class="card-footer content-overlay border-0 pt-0 pb-4">
-          <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="real-estate-single-v1.html">
-            <div class="fs-sm text-uppercase pt-2 mb-1">فروشی</div>
-            <h3 class="h5 text-light mb-1">خانه دوبلکس</h3>
-            <div class="fs-sm opacity-70"><i class="fi-map-pin ms-1"></i> ایران، استان تهران ، میدان آزادی</div></a>
-            <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">شروع قیمت از 58.000.000 ت</a>
-              <button class="btn btn-primary btn-icon border-end-0 border-top-0 border-bottom-0 border-light fs-sm" type="button"><i class="fi-heart"></i></button>
-            </div>
+          <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" [routerLink]="['/blog/details',blog[0].id]" routerLinkActive="router-link-active">
+              <h3 class="h5 text-light mb-1">  {{blog[0].title}} </h3>
+              <div class="fs-sm opacity-70"><i class="fi-calendar-alt ms-1"></i> 
+              {{blog[0].createDate | date :'YYYY/MM/dd'}}  
+              </div></a>
+              <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" [routerLink]="['/blog/details',blog[0].id]" routerLinkActive="router-link-active"  style="height: 2.75rem;">مشاهده
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><i class="fi-chevrons-left"></i></a>
+              </div>
           </div>
         </div>
       </div>
-      <div class="card bg-size-cover bg-position-center border-0 overflow-hidden" style="background-image: url(./assets/img/real-estate/recent/03.jpg);"><span class="img-gradient-overlay"></span>
-        <div class="card-body content-overlay pb-0"><span class="badge bg-info fs-sm">جدید</span></div>
+      <div *ngIf="blog[1]" class="card bg-size-cover bg-position-center border-0 overflow-hidden" style="background-image: url('{{imagePath + blog[1].imageName}}');"><span class="img-gradient-overlay"></span>
+        <div class="card-body content-overlay pb-0">
+          <div class="d-flex"><span class="badge bg-info fs-sm">جدید</span></div>
+        </div>
         <div class="card-footer content-overlay border-0 pt-0 pb-4">
-          <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="real-estate-single-v1.html">
-            <div class="fs-sm text-uppercase pt-2 mb-1">فروشی</div>
-            <h3 class="h5 text-light mb-1">واحد تجاری و اداری</h3>
-            <div class="fs-sm opacity-70"><i class="fi-map-pin ms-1"></i> ایران، استان تهران ، میدان آزادی</div></a>
-            <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">شروع قیمت از 58.000.000 ت</a>
-              <button class="btn btn-primary btn-icon border-end-0 border-top-0 border-bottom-0 border-light fs-sm" type="button"><i class="fi-heart"></i></button>
-            </div>
+          <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" [routerLink]="['/blog/details',blog[1].id]" routerLinkActive="router-link-active">
+              <h3 class="h5 text-light mb-1">  {{blog[1].title}} </h3>
+              <div class="fs-sm opacity-70"><i class="fi-calendar-alt ms-1"></i> 
+              {{blog[1].createDate | date :'YYYY/MM/dd'}}  
+              </div></a>
+              <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" [routerLink]="['/blog/details',blog[1].id]" routerLinkActive="router-link-active"  style="height: 2.75rem;">مشاهده
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><i class="fi-chevrons-left"></i></a>
+              </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="card bg-size-cover bg-position-center border-0 overflow-hidden h-100" style="background-image: url(./assets/img/real-estate/recent/01.jpg);"><span class="img-gradient-overlay"></span>
+      <div *ngIf="blog[2]" class="card bg-size-cover bg-position-center border-0 overflow-hidden h-100" style="background-image: url('{{imagePath + blog[2].imageName}}');"><span class="img-gradient-overlay"></span>
         <div class="card-body content-overlay pb-0">
-          <div class="d-flex"><span class="badge bg-success fs-sm me-2">تایید</span><span class="badge bg-info fs-sm">جدید</span></div>
+          <div class="d-flex"><span class="badge bg-info fs-sm">جدید</span></div>
         </div>
         <div class="card-footer content-overlay border-0 pt-0 pb-4">
-          <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="real-estate-single-v1.html">
-              <div class="fs-sm text-uppercase pt-2 mb-1">اجاره ای</div>
-              <h3 class="h5 text-light mb-1">ویلا اجاره ای لاکچری</h3>
-              <div class="fs-sm opacity-70"><i class="fi-map-pin ms-1"></i> ایران، استان تهران ، میدان آزادی</div></a>
-            <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">شروع قیمت از 58.000.000 ت</a>
-              <button class="btn btn-primary btn-icon border-end-0 border-top-0 border-bottom-0 border-light fs-sm" type="button"><i class="fi-heart"></i></button>
+          <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" [routerLink]="['/blog/details',blog[2].id]" routerLinkActive="router-link-active">
+              <h3 class="h5 text-light mb-1">  {{blog[2].title}} </h3>
+              <div class="fs-sm opacity-70"><i class="fi-calendar-alt ms-1"></i> 
+              {{blog[2].createDate | date :'YYYY/MM/dd'}}  
+              </div></a>
+            <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" [routerLink]="['/blog/details',blog[2].id]" routerLinkActive="router-link-active"  style="height: 2.75rem;">مشاهده
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><i class="fi-chevrons-left"></i></a>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule, isDevMode } from '@angular/core';
+import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule, isDevMode } from '@angular/core';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, PB_DIRECTION, POSITION, SPINNER } from 'ngx-ui-loader';
 import { Interceptor } from './_config/interceptor/interceptor';
@@ -9,7 +9,7 @@ import { SharedModule } from './_shared/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import * as fromStore from 'src/app/_core/_stateManagement/Home'
-import { StoreModule } from '@ngrx/store';
+import { Store, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -51,6 +51,16 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
       multi: true,
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (store: Store<fromStore.HomeManagementState>) => {
+        return () => {
+          store.dispatch( fromStore.GetAllHome());
+        };
+      },
+      multi: true,
+      deps: [Store]
     },
     HomePageService
   ],

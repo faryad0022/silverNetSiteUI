@@ -9,6 +9,7 @@
 .banner-section{
 	direction: ltr;
 	position: relative;
+	margin-top: 80px;
 }
 
 .banner-carousel{

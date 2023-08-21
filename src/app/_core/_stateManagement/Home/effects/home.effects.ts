@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, effect } from '@angular/core';
 import { of } from 'rxjs';
-import { map, catchError, mergeMap, withLatestFrom, filter } from 'rxjs/operators';
+import { map, catchError, mergeMap, withLatestFrom, filter, exhaustMap, concatMap } from 'rxjs/operators';
 import *  as fromActions from '../actions';
 import *  as fromStore from 'src/app/_core/_stateManagement/Home';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
@@ -23,7 +23,7 @@ export class HomeEffects {
         //che state if loaded then not dispat to it
         withLatestFrom(this.store.pipe(select(fromStore.getLoadStatus))),
         filter(([{ }, loadStatus]) => loadStatus === StatusStage.NOT_LOAD),
-        mergeMap((action) => this.homeService.getAllHomeData().pipe(
+        exhaustMap((action) => this.homeService.getAllHomeData().pipe(
             map((response) => {
                 if(response.status === 'Success'){
                     return fromActions.GetAllHomeSuccess({response});

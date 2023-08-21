@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable, take } from 'rxjs';
 import * as fromStore from 'src/app/_core/_stateManagement/Home';
+import { BlogContentDTO } from './_core/data/blogContent/blogContentDTO';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,16 +10,12 @@ import * as fromStore from 'src/app/_core/_stateManagement/Home';
 })
 export class AppComponent implements OnInit {
   title = 'site';
-
+  blogs:Observable<BlogContentDTO[]>;
   constructor(
     private store:Store<fromStore.HomeManagementState>
-  ){}
+  ){
+
+  }
   ngOnInit(): void {
-    this.getHomePageData();
   }
-  getHomePageData(){
-    this.store.dispatch(fromStore.GetAllHome());
-
-  }
-
 }
