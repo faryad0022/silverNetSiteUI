@@ -10,13 +10,13 @@ import { ResponseData } from '../data/responseData';
 @Injectable({ providedIn: 'root' })
 export class BlogContentService {
 
-    queryParams = new HttpParams();
 
     constructor(private http: HttpClient) { }
 
     public getBlogContentWithDetails(id: number): Observable<ResponseData<BlogContentDTO>> {
-        this.queryParams = this.queryParams.append('id', id);
-        return this.http.get<ResponseData<BlogContentDTO>>(BlogContent_Get_WithDetails, { params: this.queryParams });
+        let queryParams = new HttpParams();
+        queryParams = queryParams.append('id', id);        
+        return this.http.get<ResponseData<BlogContentDTO>>(BlogContent_Get_WithDetails, { params: queryParams });
     }
     public getAllBlogContentWithDetails(): Observable<ResponseData<BlogContentDTO[]>> {
         return this.http.get<ResponseData<BlogContentDTO[]>>(BlogContent_GetAll_WithDetails);

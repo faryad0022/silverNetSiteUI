@@ -3,10 +3,10 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a [routerLink]="['/home']" routerLinkActive="router-link-active" >خانه</a></li>
       <li class="breadcrumb-item"><a [routerLink]="['/blog/list']" routerLinkActive="router-link-active" >وبلاگ</a></li>
-      <li class="breadcrumb-item active" aria-current="page">5 پروژه جاه طلبانه آسان برای بهبود خانه شما</li>
+      <li class="breadcrumb-item active" aria-current="page">{{blog.title}}</li>
     </ol>
   </nav>
 
-    <app-blog-details-widget></app-blog-details-widget>
+    <app-blog-details-widget [blog]="blog"></app-blog-details-widget>
     <app-latest-blog-widget-v2></app-latest-blog-widget-v2>
 </div>
