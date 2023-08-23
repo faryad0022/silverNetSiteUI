@@ -4,9 +4,9 @@
 
 
 
-<app-banner-widget [banners]="banners"></app-banner-widget>
+<app-banner-widget  *ngIf="banners" [banners]="banners"></app-banner-widget>
 <app-property-type-widget></app-property-type-widget>
 <app-real-estate-service-widget></app-real-estate-service-widget>
-<app-latest-property-widget [properties]="properties"></app-latest-property-widget>
-<app-latest-blog-widget [blogs]="blogs"></app-latest-blog-widget>
+<app-latest-property-widget *ngIf="properties" [properties]="properties"></app-latest-property-widget>
+<app-latest-blog-widget *ngIf="blogs" [blogs]="blogs"></app-latest-blog-widget>
 <router-outlet></router-outlet>

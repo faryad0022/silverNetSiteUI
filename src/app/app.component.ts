@@ -10,9 +10,7 @@ import { BlogContentDTO } from './_core/data/blogContent/blogContentDTO';
 })
 export class AppComponent implements OnInit {
   title = 'site';
-  blogs:Observable<BlogContentDTO[]>;
   constructor(
-    private store:Store<fromStore.HomeManagementState>
   ){
 
   }

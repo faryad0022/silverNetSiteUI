@@ -23,9 +23,13 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getBanners();
-    this.getLatestBlog();
-    this.getLatestProperty();
+    setInterval(()=>{
+      this.getBanners();
+      this.getLatestBlog();
+      this.getLatestProperty();
+
+    },50);
+
   }
   getBanners(){
     this.banners = this.store.select(fromStore.getBanners);
