@@ -35,21 +35,23 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-5 col-lg-6 offset-xl-1">
+          <div class="col-xl-5 col-lg-6 offset-xl-1" *ngIf="blogs|async ; let blog;">
             <h4 class="h5">بلاگ های اخیر</h4>
-            <article class="d-flex align-items-start" style="max-width: 640px;"><a class="d-none d-sm-block flex-shrink-0 me-sm-4 mb-sm-0 mb-3" href="real-estate-blog-single.html"><img class="rounded-3" src="./assets/img/real-estate/blog/th01.jpg" width="100" alt="Blog post"></a>
+            <article *ngIf="blog[1]" class="d-flex align-items-start" style="max-width: 640px;"><a class="d-none d-sm-block flex-shrink-0 me-sm-4 mb-sm-0 mb-3" [routerLink]="['/blog/details',blog[1].id]" routerLinkActive="router-link-active" ><img class="rounded-3" src="{{imagePath}}{{blog[1].imageName}}" width="100" alt="Blog post"></a>
               <div>
-                <h6 class="mb-1 fs-sm fw-normal text-uppercase text-primary">نکات و ترفندها</h6>
-                <h5 class="mb-2 fs-base"><a class="nav-link" href="real-estate-blog-single.html">راهنمای ما برای جستجوی آپارتمان هوشمند</a></h5>
-                <p class="mb-2 fs-sm">لورم ایپسوم ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم استاندارد صنعت بوده است...</p><a class="nav-link nav-link-muted d-inline-block me-3 p-0 fs-xs fw-normal" href="#"><i class="fi-calendar mt-n1 ms-1 fs-sm align-middle opacity-70"></i>24 خرداد</a><a class="nav-link nav-link-muted d-inline-block me-3 p-0 fs-xs fw-normal" href="#"><i class="fi-chat-circle mt-n1 ms-1 fs-sm align-middle opacity-70"></i>2 کامنت</a>
+                <h6 class="mb-1 fs-sm fw-normal text-uppercase text-primary"> {{blog[1].blogGroupName}} </h6>
+                <h5 class="mb-2 fs-base"><a class="nav-link" [routerLink]="['/blog/details',blog[1].id]" routerLinkActive="router-link-active" >  {{blog[1].title}}    </a></h5>
+                  <a class="nav-link nav-link-muted d-inline-block me-3 p-0 fs-xs fw-normal" [routerLink]="['/blog/details',blog[1].id]" routerLinkActive="router-link-active"><i class="fi-calendar mt-n1 ms-1 fs-sm align-middle opacity-70"></i> {{blog[1].createDate | date :'YYYY/MM/dd'}}  
+                </a>
               </div>
             </article>
             <hr class="text-dark opacity-10 my-4">
-            <article class="d-flex align-items-start" style="max-width: 640px;"><a class="d-none d-sm-block flex-shrink-0 me-sm-4 mb-sm-0 mb-3" href="real-estate-blog-single.html"><img class="rounded-3" src="./assets/img/real-estate/blog/th02.jpg" width="100" alt="Blog post"></a>
+            <article *ngIf="blog[0]" class="d-flex align-items-start" style="max-width: 640px;"><a class="d-none d-sm-block flex-shrink-0 me-sm-4 mb-sm-0 mb-3" [routerLink]="['/blog/details',blog[0].id]" routerLinkActive="router-link-active" ><img class="rounded-3" src="{{imagePath}}{{blog[0].imageName}}" width="100" alt="Blog post"></a>
               <div>
-                <h6 class="mb-1 fs-sm fw-normal text-uppercase text-primary">نکات و ترفندها</h6>
-                <h5 class="mb-2 fs-base"><a class="nav-link" href="real-estate-blog-single.html">10 روش برتر برای تجدید فضای خود</a></h5>
-                <p class="mb-2 fs-sm">لورم ایپسوم ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم استاندارد صنعت بوده است...</p><a class="nav-link nav-link-muted d-inline-block me-3 p-0 fs-xs fw-normal" href="#"><i class="fi-calendar mt-n1 ms-1 fs-sm align-middle opacity-70"></i>18 مرداد</a><a class="nav-link nav-link-muted d-inline-block me-3 p-0 fs-xs fw-normal" href="#"><i class="fi-chat-circle mt-n1 ms-1 fs-sm align-middle opacity-70"></i> 0 کامنت</a>
+                <h6 class="mb-1 fs-sm fw-normal text-uppercase text-primary"> {{blog[0].blogGroupName}} </h6>
+                <h5 class="mb-2 fs-base"><a class="nav-link" [routerLink]="['/blog/details',blog[0].id]" routerLinkActive="router-link-active" >  {{blog[0].title}}    </a></h5>
+                  <a class="nav-link nav-link-muted d-inline-block me-3 p-0 fs-xs fw-normal" [routerLink]="['/blog/details',blog[0].id]" routerLinkActive="router-link-active"><i class="fi-calendar mt-n1 ms-1 fs-sm align-middle opacity-70"></i> {{blog[0].createDate | date :'YYYY/MM/dd'}}  
+                </a>
               </div>
             </article>
           </div>

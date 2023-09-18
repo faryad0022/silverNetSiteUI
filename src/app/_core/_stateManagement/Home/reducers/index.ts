@@ -1,5 +1,5 @@
-import {ActionReducerMap} from "@ngrx/store";
-import { HomeState, homeReducer } from "./banner.reducer";
+import { ActionReducerMap } from "@ngrx/store";
+import { HomeState, homeReducer } from "./home.reducer";
 
 export interface HomeManagementState {
     homes: HomeState;

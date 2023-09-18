@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LatestBlogResolver } from './_core/_resolvers/latestBlog.resolver';
 
 const routes: Routes = [
   {
@@ -29,7 +30,6 @@ const routes: Routes = [
   {
     path:'',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
-
   },
   { path: '**', redirectTo: 'error', pathMatch: 'full' },
 
