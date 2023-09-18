@@ -1,0 +1,8 @@
+<div class="mb-4 pb-md-3">
+  <h3 class="h5">ویدئو</h3>
+  <div *ngFor="let video of propertyVideo" class="mb-4 pb-md-3">
+    <div class="bgi-no-repeat bgi-size-cover rounded min-h-250px mb-5"
+      [innerHTML]="sanitizer.bypassSecurityTrustHtml(video.videoLink)">
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { BlogContent_GetAll_WithDetails, BlogContent_Get_WithDetails } from '../../_config/pathUtility/pathTool';
+import { BlogContent_GetAll_WithDetails, BlogContent_GetLatest, BlogContent_Get_WithDetails } from '../../_config/pathUtility/pathTool';
 import { BlogContentDTO } from '../data/blogContent/blogContentDTO';
 import { ResponseData } from '../data/responseData';
 
@@ -20,6 +20,9 @@ export class BlogContentService {
     }
     public getAllBlogContentWithDetails(): Observable<ResponseData<BlogContentDTO[]>> {
         return this.http.get<ResponseData<BlogContentDTO[]>>(BlogContent_GetAll_WithDetails);
+    }
+    public getLatestBlogsWithDetails():Observable<ResponseData<BlogContentDTO[]>>{
+        return this.http.get<ResponseData<BlogContentDTO[]>>(BlogContent_GetLatest)
     }
 
 

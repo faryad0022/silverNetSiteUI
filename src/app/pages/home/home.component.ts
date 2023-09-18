@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { BannerOriginImagePath } from 'src/app/_config/pathUtility/pathTool';
-import { BannerService } from 'src/app/_core/_services/banner.service';
-import { BannerDTO } from 'src/app/_core/data/banner/bannerDTO';
-import * as fromStore from 'src/app/_core/_stateManagement/Home';
-import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import * as fromStore from 'src/app/_core/_stateManagement/Home';
+import { BannerDTO } from 'src/app/_core/data/banner/bannerDTO';
 import { BlogContentDTO } from 'src/app/_core/data/blogContent/blogContentDTO';
 import { PropertyDTO } from 'src/app/_core/data/property/propertyDTO';
-import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
-
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

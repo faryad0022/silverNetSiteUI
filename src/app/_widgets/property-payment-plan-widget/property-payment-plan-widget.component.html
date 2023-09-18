@@ -1,0 +1,43 @@
+<div class="mb-4 mt-3 pb-md-3">
+
+  <h3 class="h5">نحوه پرداخت | زمان تحویل |  هزینه های جانبی</h3>
+  <ul class="list-unstyled mb-0">
+    <li *ngIf="property.propertyType">
+      نوع ملک: 
+      {{property.propertyType}}
+    </li>
+
+    <li *ngIf="property.startDate">
+      شروع ساخت پروژه: 
+      {{property.startDate| date :'YYYY/MM/dd'}}
+    </li>
+    <li *ngIf="property.keyHandOverDate">
+      زمان تحویل: 
+      {{property.keyHandOverDate| date :'YYYY/MM/dd'}}
+    </li>
+    <hr>
+    <li *ngIf="property.price">
+      قیمت: 
+      {{property.price|currency:'GBP': 'symbol' : '1.0-0'}} پوند 
+    </li>
+    <li *ngIf="property.connectionFee">
+      انشعابات: 
+      {{property.connectionFee|currency:'GBP': 'symbol' : '1.0-0'}} پوند 
+    </li>
+    <li *ngIf="property.stampDutyFee">
+      تمبر: 
+      {{property.stampDutyFee|currency:'GBP': 'symbol' : '1.0-0'}} پوند 
+    </li>
+    <li *ngIf="property.vATFee">
+      مالیات: 
+      {{property.vATFee|currency:'GBP': 'symbol' : '1.0-0'}} پوند 
+    </li>
+    <hr>
+    <li *ngIf="property.paymentPlan">
+      نحوه پرداخت: 
+      {{property.paymentPlan}}  
+    </li>
+
+
+  </ul>
+</div>

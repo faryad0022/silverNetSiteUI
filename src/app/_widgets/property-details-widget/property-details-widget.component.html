@@ -1,0 +1,12 @@
+<div class="mb-4 pb-md-3">
+  <h3 class="h5">مشخصات</h3>
+  <ul class="list-unstyled mb-0">
+    <li *ngIf="property.propertyType">نوع ملک: {{property.propertyType}}</li>
+    <li *ngIf="property.floorSpace">متراژ (مترمربع): {{property.floorSpace}} مترمربع</li>
+    <li *ngIf="property.floor">طبقه: {{property.floor}} </li>
+
+    <li *ngIf="property.keyHandOverDate">سال ساخت: {{property.keyHandOverDate| date :'YYYY/MM/dd'}}</li>
+    <li *ngIf="property.numberOfBedroom">تعداد اتاق: {{property.numberOfBedroom}}</li>
+    <li *ngIf="property.numberOfBathroom">سرویس بهداشتی: {{property.numberOfBathroom}}</li>
+  </ul>
+</div>

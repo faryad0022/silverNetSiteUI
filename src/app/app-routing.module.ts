@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { homedataResolver } from './_core/_resolvers/homedata.resolver';
 
 const routes: Routes = [
   {

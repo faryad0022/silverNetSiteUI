@@ -1,3 +1,24 @@
-<p>
-  property-list works!
-</p>
+<div class="container-fluid mt-5 pt-5 p-0">
+  <div class="row g-0 mt-n3">
+    <!-- Filters sidebar (Offcanvas on mobile)-->
+    <aside class="col-lg-4 col-xl-3 border-top-lg border-end-lg shadow-sm px-3 px-xl-4 px-xxl-5 pt-lg-2">
+      <app-property-filter-aside-widget></app-property-filter-aside-widget>
+    </aside>
+    <!-- Page content-->
+    <div class="col-lg-8 col-xl-9 position-relative overflow-hidden pb-5 pt-4 px-3 px-xl-4 px-xxl-5">
+
+      <!-- Breadcrumb-->
+      <nav class="mb-3 pt-md-2" aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="['/home']" routerLinkActive="router-link-active" >خانه</a></li>
+          <li class="breadcrumb-item active" aria-current="page">ملک برای اجاره</li>
+        </ol>
+      </nav>
+      <!-- Title-->
+      <div class="d-sm-flex align-items-center justify-content-between pb-3 pb-sm-4">
+        <h1 class="h4 mb-sm-0">لیست املاک </h1>
+      </div>
+      <app-property-list-widget></app-property-list-widget>
+    </div>
+  </div>
+</div>

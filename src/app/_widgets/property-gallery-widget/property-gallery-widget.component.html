@@ -1,0 +1,42 @@
+<section class="container overflow-auto mb-4 pb-3" data-simplebar>
+  <div class="row g-2 g-md-3 gallery" data-thumbnails="true" style="min-width: 30rem;">
+    <div class="col-8">
+      <a class="gallery-item rounded rounded-md-3" href="{{propertyFeatureImagePath}}{{property.featureImage}}"
+        data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;سرویس بهداشتی&lt;/h6&gt;">
+        <img src="{{propertyFeatureImagePath}}{{property.featureImage}}" alt="Gallery thumbnail">
+      </a>
+    </div>
+    <div class="col-4">
+      <a *ngIf="propertyGallery[0]" class="gallery-item rounded rounded-md-3 mb-2 mb-md-3" href="{{propertyGalleryOriginImagePth}}{{propertyGallery[0].imageName}}"
+        data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;اتاق خواب&lt;/h6&gt;">
+        <img src="{{propertyGalleryOriginImagePth}}{{propertyGallery[0].imageName}}" alt="Gallery thumbnail">
+      </a>
+      <a *ngIf="propertyGallery[1]" class="gallery-item rounded rounded-md-3" href="{{propertyGalleryOriginImagePth}}{{propertyGallery[1].imageName}}"
+        data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;پذیرایی&lt;/h6&gt;">
+        <img src="{{propertyGalleryOriginImagePth}}{{propertyGallery[1].imageName}}" alt="Gallery thumbnail">
+      </a>
+    </div>
+
+    <div class="col-12">
+      <div class="row g-2 g-md-3">
+        <carousel 
+        [itemsPerSlide]="itemsPerSlide" 
+        [singleSlideOffset]="singleSlideOffset" 
+        [startFromIndex]="1"
+        [interval]="myInterval"
+        [(activeSlide)]="activeSlideIndex"
+        [noWrap] = "noWrap"
+        [interval]="0">
+          <slide *ngFor="let image of propertyGallery; let index=index">
+            <div class="col">
+              <a class="gallery-item rounded-1 rounded-md-2" style="margin-right: 20px;" href="{{propertyGalleryOriginImagePth}}{{image.imageName}}">
+                <img src="{{propertyGalleryOriginImagePth}}{{image.imageName}}" alt="{{image.imageName}}"> 
+              </a>
+            </div>
+          </slide>
+        </carousel>
+
+      </div>
+    </div>
+  </div>
+</section>

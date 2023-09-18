@@ -3,25 +3,31 @@
   <div class="row gy-5">
     <div class="col-lg-6">
       <!-- Post-->
-      <article class="card border-0 shadow-sm card-hover card-horizontal mb-4"><a class="card-img-top" href="#" style="background-image: url(./assets/img/real-estate/blog/05.jpg);"></a>
-        <div class="card-body"><a class="fs-xs text-uppercase text-decoration-none" href="real-estate-blog-single.html">سبک زندگی</a>
-          <h3 class="fs-base pt-1 mb-2"><a class="nav-link" href="real-estate-blog-single.html">5 پروژه جاه طلبانه آسان برای بهبود خانه شما</a></h3>
-          <p class="fs-sm text-muted">ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای... </p><a class="d-flex align-items-center text-decoration-none" href="#"><img class="rounded-circle" src="./assets/img/avatars/10.jpg" width="44" alt="Avatar">
+      <article *ngIf="latestBlogs[0]" class="card border-0 shadow-sm card-hover card-horizontal mb-4">
+        <a class="card-img-top" [routerLink]="['/blog/details',latestBlogs[0].id]" routerLinkActive="router-link-active"  style="background-image: url('{{blogImagePath + latestBlogs[0].imageName}}');"></a>
+        <div class="card-body"><a class="fs-xs text-uppercase text-decoration-none"> {{latestBlogs[0].blogGroupName}}</a>
+          <h3 class="fs-base pt-1 mb-2"><a class="nav-link">{{latestBlogs[0].title}}</a></h3>
+          <a class="d-flex align-items-center text-decoration-none" [routerLink]="['/blog/details',latestBlogs[0].id]" routerLinkActive="router-link-active" >
             <div class="pe-2">
-              <h6 class="fs-sm text-nav lh-base mb-1">آنت بلک</h6>
-              <div class="d-flex text-body fs-xs"><span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 ms-1"></i>1 اردیبهشت</span><span><i class="fi-chat-circle opacity-70 ms-1"></i>1 دیدگاه</span></div>
-            </div></a>
+              <div class="d-flex text-body fs-xs">
+                <span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 ms-1"></i>{{latestBlogs[0].createDate | date :'YYYY/MM/dd'}}</span>
+              </div>
+            </div>
+          </a>
         </div>
       </article>
       <!-- Post-->
-      <article class="card border-0 shadow-sm card-hover card-horizontal mb-4"><a class="card-img-top" href="real-estate-blog-single.html" style="background-image: url(./assets/img/real-estate/blog/06.jpg);"></a>
-        <div class="card-body"><a class="fs-xs text-uppercase text-decoration-none" href="#">نکات و ترفندها</a>
-          <h3 class="fs-base pt-1 mb-2"><a class="nav-link" href="real-estate-blog-single.html">7 نکته برای دستیابی به حداکثر آرامش</a></h3>
-          <p class="fs-sm text-muted">متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو ...</p><a class="d-flex align-items-center text-decoration-none" href="#"><img class="rounded-circle" src="./assets/img/avatars/08.jpg" width="44" alt="Avatar">
+      <article *ngIf="latestBlogs[1]" class="card border-0 shadow-sm card-hover card-horizontal mb-4">
+        <a class="card-img-top" [routerLink]="['/blog/details',latestBlogs[1].id]" routerLinkActive="router-link-active"  style="background-image: url('{{blogImagePath + latestBlogs[1].imageName}}');"></a>
+        <div class="card-body"><a class="fs-xs text-uppercase text-decoration-none"> {{latestBlogs[1].blogGroupName}}</a>
+          <h3 class="fs-base pt-1 mb-2"><a class="nav-link">{{latestBlogs[1].title}}</a></h3>
+          <a class="d-flex align-items-center text-decoration-none" [routerLink]="['/blog/details',latestBlogs[1].id]" routerLinkActive="router-link-active" >
             <div class="pe-2">
-              <h6 class="fs-sm text-nav lh-base mb-1">الهام کریمی</h6>
-              <div class="d-flex text-body fs-xs"><span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 ms-1"></i>27 تیر</span><span><i class="fi-chat-circle opacity-70 ms-1"></i>3 دیدگاه</span></div>
-            </div></a>
+              <div class="d-flex text-body fs-xs">
+                <span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 ms-1"></i>{{latestBlogs[1].createDate | date :'YYYY/MM/dd'}}</span>
+              </div>
+            </div>
+          </a>
         </div>
       </article>
       <div class="pt-2"><a class="btn btn-lg btn-outline-primary w-sm-auto w-100" [routerLink]="['/blog/list']" routerLinkActive="router-link-active" >مقالات بیشتر</a></div>
@@ -29,25 +35,31 @@
 
     <div class="col-lg-6">
       <!-- Post-->
-      <article class="card border-0 shadow-sm card-hover card-horizontal mb-4"><a class="card-img-top" href="#" style="background-image: url(./assets/img/real-estate/blog/05.jpg);"></a>
-        <div class="card-body"><a class="fs-xs text-uppercase text-decoration-none" href="real-estate-blog-single.html">سبک زندگی</a>
-          <h3 class="fs-base pt-1 mb-2"><a class="nav-link" href="real-estate-blog-single.html">5 پروژه جاه طلبانه آسان برای بهبود خانه شما</a></h3>
-          <p class="fs-sm text-muted">ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای... </p><a class="d-flex align-items-center text-decoration-none" href="#"><img class="rounded-circle" src="./assets/img/avatars/10.jpg" width="44" alt="Avatar">
+      <article *ngIf="latestBlogs[3]" class="card border-0 shadow-sm card-hover card-horizontal mb-4">
+        <a class="card-img-top" [routerLink]="['/blog/details',latestBlogs[3].id]" routerLinkActive="router-link-active"  style="background-image: url('{{blogImagePath + latestBlogs[3].imageName}}');"></a>
+        <div class="card-body"><a class="fs-xs text-uppercase text-decoration-none"> {{latestBlogs[3].blogGroupName}}</a>
+          <h3 class="fs-base pt-1 mb-2"><a class="nav-link">{{latestBlogs[3].title}}</a></h3>
+          <a class="d-flex align-items-center text-decoration-none" [routerLink]="['/blog/details',latestBlogs[3].id]" routerLinkActive="router-link-active" >
             <div class="pe-2">
-              <h6 class="fs-sm text-nav lh-base mb-1">آنت بلک</h6>
-              <div class="d-flex text-body fs-xs"><span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 ms-1"></i>1 اردیبهشت</span><span><i class="fi-chat-circle opacity-70 ms-1"></i>1 دیدگاه</span></div>
-            </div></a>
+              <div class="d-flex text-body fs-xs">
+                <span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 ms-1"></i>{{latestBlogs[3].createDate | date :'YYYY/MM/dd'}}</span>
+              </div>
+            </div>
+          </a>
         </div>
       </article>
       <!-- Post-->
-      <article class="card border-0 shadow-sm card-hover card-horizontal mb-4"><a class="card-img-top" href="real-estate-blog-single.html" style="background-image: url(./assets/img/real-estate/blog/06.jpg);"></a>
-        <div class="card-body"><a class="fs-xs text-uppercase text-decoration-none" href="#">نکات و ترفندها</a>
-          <h3 class="fs-base pt-1 mb-2"><a class="nav-link" href="real-estate-blog-single.html">7 نکته برای دستیابی به حداکثر آرامش</a></h3>
-          <p class="fs-sm text-muted">متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو ...</p><a class="d-flex align-items-center text-decoration-none" href="#"><img class="rounded-circle" src="./assets/img/avatars/08.jpg" width="44" alt="Avatar">
+      <article *ngIf="latestBlogs[2]" class="card border-0 shadow-sm card-hover card-horizontal mb-4">
+        <a class="card-img-top" [routerLink]="['/blog/details',latestBlogs[2].id]" routerLinkActive="router-link-active"  style="background-image: url('{{blogImagePath + latestBlogs[2].imageName}}');"></a>
+        <div class="card-body"><a class="fs-xs text-uppercase text-decoration-none"> {{latestBlogs[2].blogGroupName}}</a>
+          <h3 class="fs-base pt-1 mb-2"><a class="nav-link">{{latestBlogs[2].title}}</a></h3>
+          <a class="d-flex align-items-center text-decoration-none" [routerLink]="['/blog/details',latestBlogs[2].id]" routerLinkActive="router-link-active" >
             <div class="pe-2">
-              <h6 class="fs-sm text-nav lh-base mb-1">الهام کریمی</h6>
-              <div class="d-flex text-body fs-xs"><span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 ms-1"></i>27 تیر</span><span><i class="fi-chat-circle opacity-70 ms-1"></i>3 دیدگاه</span></div>
-            </div></a>
+              <div class="d-flex text-body fs-xs">
+                <span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 ms-1"></i>{{latestBlogs[2].createDate | date :'YYYY/MM/dd'}}</span>
+              </div>
+            </div>
+          </a>
         </div>
       </article>
     </div>

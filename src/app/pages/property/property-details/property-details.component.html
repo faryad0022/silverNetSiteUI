@@ -1,3 +1,58 @@
-<p>
-  property-details works!
-</p>
+<section class="container pt-5 mt-5" *ngIf="property">
+  <!-- Breadcrumb-->
+  <nav class="mb-3 pt-md-3" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/home']" routerLinkActive="router-link-active">خانه</a></li>
+      <li class="breadcrumb-item"> ملک برای {{property.propertyTypeContract}}</li>
+      <li class="breadcrumb-item active" aria-current="page">{{property.propertyType}}</li>
+    </ol>
+  </nav>
+  <h1 class="h2 mb-2 font-vazir"> {{property.propertyType}} | {{property.propertyTypeContract}} </h1>
+  <p class="mb-2 pb-1 fs-md">
+    موقعیت مکانی: {{property.city}}
+  </p>
+  <!-- Features + Sharing-->
+  <div class="d-flex justify-content-between align-items-center">
+    <ul class="d-flex mb-4 list-unstyled">
+      <li class="me-3 ps-3 border-end"><b class="ms-1">{{property.numberOfBedroom}}</b><i
+          class="fi-bed mt-n1 lead align-middle text-muted"></i></li>
+      <li class="me-3 ps-3 border-end"><b class="ms-1">{{property.numberOfBathroom}}</b><i
+          class="fi-bath mt-n1 lead align-middle text-muted"></i></li>
+      <li><b>{{property.floorSpace}} </b> مترمربع</li>
+    </ul>
+
+  </div>
+</section>
+<!-- Gallery-->
+<app-property-gallery-widget 
+  *ngIf="propertyGallery"
+  [propertyFeatureImagePath]="propertyFeatureImagePath" 
+  [propertyGalleryOriginImagePth]="propertyGalleryOriginImagePth"
+  [propertyGallery]="propertyGallery"
+  [property]="property">
+</app-property-gallery-widget>
+<!-- Post content-->
+<section class="container mb-5 pb-1" *ngIf="property">
+  <div class="row">
+    <div class="col-md-7 mb-md-0 mb-4">
+      <span class="badge bg-success me-2 mb-3">{{property.propertyType}}</span><span
+        class="badge bg-info me-2 mb-3">{{property.propertyTypeContract}}</span>
+      <h2 class="h4 mb-4 pb-4 border-bottom">{{property.price|currency:'GBP': 'symbol' : '1.0-0'}} پوند <span
+          class="d-inline-block ms-1 fs-base fw-normal text-body">/شروع قیمت</span></h2>
+      <!-- Overview-->
+      <app-property-overview-widget *ngIf="property.description" [property]="property"></app-property-overview-widget>
+      <!-- Property Details-->
+      <app-property-details-widget [property]="property"></app-property-details-widget>
+      <!--Property Payment Plan-->
+      <app-property-payment-plan-widget [property]="property"></app-property-payment-plan-widget>
+      <!-- Amenities-->
+      <app-property-facility-widget></app-property-facility-widget>
+      <!--Property Videos-->
+      <app-property-video-widget *ngIf="propertyVideo" [propertyVideo]="propertyVideo"></app-property-video-widget>
+    </div>
+    <!-- Sidebar Contact Form-->
+    <aside class="col-lg-4 col-md-5 ms-lg-auto pb-1">
+      <app-contact-form-property-widget></app-contact-form-property-widget>
+    </aside>
+  </div>
+</section>

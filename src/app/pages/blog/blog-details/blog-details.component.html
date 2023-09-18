@@ -1,12 +1,12 @@
 <div class="container mt-5 mb-md-4 pt-5">
   <nav class="mb-3 pt-md-3" aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a [routerLink]="['/home']" routerLinkActive="router-link-active" >خانه</a></li>
-      <li class="breadcrumb-item"><a [routerLink]="['/blog/list']" routerLinkActive="router-link-active" >وبلاگ</a></li>
+      <li class="breadcrumb-item"><a [routerLink]="['/home']" routerLinkActive="router-link-active">خانه</a></li>
+      <li class="breadcrumb-item"><a [routerLink]="['/blog/list']" routerLinkActive="router-link-active">وبلاگ</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{blog.title}}</li>
     </ol>
   </nav>
 
-    <app-blog-details-widget [blog]="blog"></app-blog-details-widget>
-    <app-latest-blog-widget-v2></app-latest-blog-widget-v2>
+  <app-blog-details-widget [blog]="blog"></app-blog-details-widget>
+  <app-latest-blog-widget-v2 [latestBlogs]="latestBlogs" [blogImagePath]="blogImagePath"></app-latest-blog-widget-v2>
 </div>

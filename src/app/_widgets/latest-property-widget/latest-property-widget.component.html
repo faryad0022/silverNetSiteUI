@@ -6,7 +6,7 @@
       <!-- Item-->
       <div class="col-xl-3 col-md-6" *ngFor="let property of properties|async; let i = index">
         <div class="card shadow-sm card-hover border-0 h-100" *ngIf="i<4">
-          <div class="card-img-top card-img-hover"><a class="img-overlay" href="real-estate-single-v1.html"></a>
+          <div class="card-img-top card-img-hover"><a class="img-overlay" [routerLink]="['/property/details',property.id]" routerLinkActive="router-link-active" ></a>
             <div class="position-absolute start-0 top-0 pt-3 pe-3"><span class="d-table badge bg-info">جدید</span></div>
             <div class="content-overlay end-0 top-0 pt-3 ps-3">
               <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Add to Wishlist"><i class="fi-heart"></i></button>
@@ -14,7 +14,7 @@
           </div>
           <div class="card-body position-relative pb-3">
             <h4 class="mb-1 fs-sm fw-normal text-uppercase text-primary">{{property.propertyTypeContract}}</h4>
-            <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">
+            <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" [routerLink]="['/property/details',property.id]" routerLinkActive="router-link-active" >
               {{property.propertyType}} &nbsp; 
               
               <span *ngIf="property.numberOfBedroom > 0">{{property.numberOfBedroom}}</span>   

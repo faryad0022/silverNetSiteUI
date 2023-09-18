@@ -121,3 +121,4 @@ export const BlogContent_GetAll_WithDetails = "blogcontent/getall/withdetails";
 export const BlogContent_Get = "blogcontent/get";
 export const BlogContent_Get_WithDetails = "blogcontent/get/withdetails";
 export const BlogContent_Get_Filter = "blogcontent/filter-blogcontents";
+export const BlogContent_GetLatest = "blogcontent/get-latest";
