@@ -1,18 +1,12 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule, isDevMode } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, PB_DIRECTION, POSITION, SPINNER } from 'ngx-ui-loader';
 import { Interceptor } from './_config/interceptor/interceptor';
-import { HomePageService } from './_core/_services/home-page.service';
-import { LayoutModule } from './_shared/layout/layout.module';
-import { SharedModule } from './_shared/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import * as fromStore from 'src/app/_core/_stateManagement/Home'
-import { Store, StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "red",
   bgsPosition: POSITION.bottomCenter,
@@ -27,21 +21,14 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AppComponent,
   ],
   imports: [
-    LayoutModule,
     HttpClientModule,
-    SharedModule,
     AppRoutingModule,
-
+    BrowserModule,
+    BrowserAnimationsModule,
     NgxUiLoaderModule, // import NgxUiLoaderModule
     NgxUiLoaderRouterModule, // import NgxUiLoaderRouterModule. By default, it will show foreground loader.
     NgxUiLoaderHttpModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
-    StoreModule.forRoot({}), 
-    EffectsModule.forRoot([]),
-    StoreRouterConnectingModule.forRoot(),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), // ToastrModule added
-
- 
 
     ToastrModule.forRoot(),// ToastrModule added
   ],

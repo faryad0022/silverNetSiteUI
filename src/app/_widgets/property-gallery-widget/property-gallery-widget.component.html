@@ -6,7 +6,7 @@
         <img src="{{propertyFeatureImagePath}}{{property.featureImage}}" alt="Gallery thumbnail">
       </a>
     </div>
-    <div class="col-4">
+    <div class="col-4" *ngIf="propertyGallery">
       <a *ngIf="propertyGallery[0]" class="gallery-item rounded rounded-md-3 mb-2 mb-md-3" href="{{propertyGalleryOriginImagePth}}{{propertyGallery[0].imageName}}"
         data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;اتاق خواب&lt;/h6&gt;">
         <img src="{{propertyGalleryOriginImagePth}}{{propertyGallery[0].imageName}}" alt="Gallery thumbnail">
@@ -17,7 +17,7 @@
       </a>
     </div>
 
-    <div class="col-12">
+    <div class="col-12" *ngIf="propertyGallery">
       <div class="row g-2 g-md-3">
         <carousel 
         [itemsPerSlide]="itemsPerSlide" 
