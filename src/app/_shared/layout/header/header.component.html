@@ -10,25 +10,21 @@
     </button>
 
 
-    <div class="order-lg-3">
+    <div class="order-lg-3" *ngIf="socials">
       <a href="tel:09123071411">
         <span></span>
         <i class="fi-phone me-3">
           09123071411
         </i>
       </a>
-      <a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#">
-        <i class="fi-facebook"></i>
+      <a  *ngFor="let social of socials" class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="/{{social.link}}" target="_blank">
+        <i *ngIf="social.name === 'Facebook'" class="fi-facebook"></i>
+        <i *ngIf="social.name === 'Twitter'" class="fi-twitter"></i>
+        <i *ngIf="social.name === 'Instagram'" class="fi-instagram"></i>
+        <i *ngIf="social.name === 'Youtube'" class="fi-youtube"></i>
+
       </a>
-      <a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#">
-        <i class="fi-twitter"></i>
-      </a>
-      <a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#">
-        <i class="fi-viber"></i>
-      </a>
-      <a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#">
-        <i class="fi-telegram"></i>
-      </a>
+
     </div>
 
 

@@ -15,7 +15,7 @@
       </ul>
     </div><a class="btn btn-link fw-normal d-none d-lg-block p-0" [routerLink]="['/blog/list']" routerLinkActive="router-link-active" >مشاهده همه <i class="fi-arrow-long-left me-2"></i></a>
   </div>
-  <div class="row g-4" *ngIf="blogs|async ; let blog;">
+  <div class="row g-4" *ngIf="blogs ; let blog;">
     <div class="col-md-6">
       <div *ngIf="blog[0]" class="card bg-size-cover bg-position-center border-0 overflow-hidden mb-4" style="background-image: url('{{imagePath + blog[0].imageName}}');"><span class="img-gradient-overlay"></span>
         <div class="card-body content-overlay pb-0">

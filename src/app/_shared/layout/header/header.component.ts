@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { SocialDTO } from 'src/app/_core/data/social/socialDTO';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  @Input() socials:SocialDTO[];
   constructor() { }
 
   ngOnInit() {

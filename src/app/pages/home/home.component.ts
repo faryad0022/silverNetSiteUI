@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import * as fromStore from 'src/app/_core/_stateManagement/Home';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { BannerDTO } from 'src/app/_core/data/banner/bannerDTO';
 import { BlogContentDTO } from 'src/app/_core/data/blogContent/blogContentDTO';
 import { PropertyDTO } from 'src/app/_core/data/property/propertyDTO';
@@ -10,30 +9,26 @@ import { PropertyDTO } from 'src/app/_core/data/property/propertyDTO';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  banners: Observable<BannerDTO[]>;
-  blogs: Observable<BlogContentDTO[]>;
-  properties: Observable<PropertyDTO[]>;
+export class HomeComponent implements OnInit, OnDestroy {
+  banners: BannerDTO[];
+  blogs: BlogContentDTO[];
+  properties: PropertyDTO[];
+  subManager = new Subscription();
   constructor(
-    private store:Store<fromStore.HomeManagementState>,
-  ) {}
-
+    private activatedRote: ActivatedRoute
+  ) { }
   ngOnInit() {
-    setInterval(()=>{
-      this.getBanners();
-      this.getLatestBlog();
-      this.getLatestProperty();
-
-    },50);
-
+    this.subManager.add(
+      this.activatedRote.data.subscribe(
+        ({ banners, latestBlogs, latestProperty }) => {
+          this.banners = banners.data;
+          this.blogs = latestBlogs.data;
+          this.properties = latestProperty.data;
+        }
+      )
+    );
   }
-  getBanners(){
-    this.banners = this.store.select(fromStore.getBanners);
-  }
-  getLatestBlog(){
-    this.blogs = this.store.select(fromStore.getLatestBlogs);
-  }
-  getLatestProperty(){
-    this.properties = this.store.select(fromStore.getLatestProperty);
+  ngOnDestroy(): void {
+    this.subManager.unsubscribe();
   }
 }

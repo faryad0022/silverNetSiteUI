@@ -92,7 +92,7 @@ export const PropertyType_Get = "propertytype/get";
 export const Property_GetAll = "property/getall";
 export const Property_Get = "property/get";
 export const Property_GetFilter = "property/filter-property";
-
+export const Property_GetLatest = "property/get-latest";
 
 //property gallery
 export const PropertyGallery_GetAll = "property-gallery/getall";

@@ -1,6 +1,6 @@
 <section class="banner-section">
   <carousel [isAnimated]="true">
-    <slide *ngFor="let banner of banners|async">
+    <slide *ngFor="let banner of banners">
       <div class="slide-item" style="background-image: url('{{imagePathOrigin + banner.bannerImage}}');">
         <div class="auto-container">
           <div class="inner-box">

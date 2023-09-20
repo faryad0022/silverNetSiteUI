@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LatestBlogResolver } from './_core/_resolvers/latestBlog.resolver';
 
 const routes: Routes = [
+
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
@@ -28,8 +28,9 @@ const routes: Routes = [
     loadChildren: () => import('./pages/property/property.module').then(m => m.PropertyModule)
   },
   {
-    path:'',
+    path: '',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
+    //resolve:{banners: BannerResolver}
   },
   { path: '**', redirectTo: 'error', pathMatch: 'full' },
 

@@ -8,7 +8,7 @@ import { BannerDTO } from 'src/app/_core/data/banner/bannerDTO';
   templateUrl: './banner-widget.component.html',
 })
 export class BannerWidgetComponent implements OnInit {
-  @Input() banners:Observable<BannerDTO[]>;
+  @Input() banners:BannerDTO[];
   imagePathOrigin = BannerOriginImagePath;
 
   constructor() { }

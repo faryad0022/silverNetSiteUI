@@ -9,7 +9,7 @@ import { PropertyComponent } from 'src/app/pages/property/property.component';
   templateUrl: './latest-property-widget.component.html',
 })
 export class LatestPropertyWidgetComponent implements OnInit {
-  @Input() properties: Observable<PropertyDTO[]>
+  @Input() properties: PropertyDTO[];
   imagePath: string = PropertyFeatureOriginImagePth;
   constructor() { }
 

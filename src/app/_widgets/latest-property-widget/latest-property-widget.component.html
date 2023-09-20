@@ -4,7 +4,7 @@
   </div>
     <div class="row gx-4 mx-0 pt-3 pb-4" >
       <!-- Item-->
-      <div class="col-xl-3 col-md-6" *ngFor="let property of properties|async; let i = index">
+      <div class="col-xl-3 col-md-6" *ngFor="let property of properties; let i = index">
         <div class="card shadow-sm card-hover border-0 h-100" *ngIf="i<4">
           <div class="card-img-top card-img-hover"><a class="img-overlay" [routerLink]="['/property/details',property.id]" routerLinkActive="router-link-active" ></a>
             <div class="position-absolute start-0 top-0 pt-3 pe-3"><span class="d-table badge bg-info">جدید</span></div>

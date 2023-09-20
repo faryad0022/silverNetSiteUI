@@ -8,7 +8,7 @@ import { BlogContentDTO } from 'src/app/_core/data/blogContent/blogContentDTO';
   templateUrl: './footer.component.html',
 })
 export class FooterComponent implements OnInit {
-  @Input() blogs: Observable<BlogContentDTO[]>;
+  @Input() blogs: BlogContentDTO[];
   @Input()  imagePath:string;
 
   constructor(

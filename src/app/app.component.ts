@@ -1,32 +1,46 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-import * as fromStore from 'src/app/_core/_stateManagement/Home';
-import { BlogContentDTO } from './_core/data/blogContent/blogContentDTO';
-import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
 import { BlogsFeatureOriginImagePth } from './_config/pathUtility/pathTool';
+import { BlogContentService } from './_core/_services/blog.service';
+import { SocialService } from './_core/_services/social.service';
+import { BlogContentDTO } from './_core/data/blogContent/blogContentDTO';
+import { SocialDTO } from './_core/data/social/socialDTO';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'site';
   subManager = new Subscription();
-  blogs: Observable<BlogContentDTO[]>;
-  imagePath:string = BlogsFeatureOriginImagePth;
+  blogs: BlogContentDTO[];
+  socials: SocialDTO[];
+  imagePath: string = BlogsFeatureOriginImagePth;
 
   constructor(
-    private store:Store<fromStore.HomeManagementState>,
+    private blogSrevice: BlogContentService,
+    private socialService: SocialService,
   ) { }
+  ngOnDestroy(): void {
+    this.subManager.unsubscribe();
+  }
 
   ngOnInit(): void {
-    setInterval(()=>{
-      this.getLatestBlog();
-    },50);
-
+    this.getLatestBlog();
+    this.getSocials();
   }
-  getLatestBlog(){
-    this.blogs = this.store.select(fromStore.getLatestBlogs);
+  getLatestBlog() {
+    this.subManager.add(
+      this.blogSrevice.getLatestBlogsWithDetails().subscribe(data => {
+        this.blogs = data.data
+      })
+    );
+  }
+  getSocials() {
+    this.subManager.add(
+      this.socialService.getAllSocial().subscribe(data => {
+        this.socials = data.data
+      })
+    );
   }
 }

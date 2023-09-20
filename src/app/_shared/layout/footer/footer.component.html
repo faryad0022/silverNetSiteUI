@@ -35,7 +35,7 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-5 col-lg-6 offset-xl-1" *ngIf="blogs|async ; let blog;">
+          <div class="col-xl-5 col-lg-6 offset-xl-1" *ngIf="blogs ; let blog;">
             <h4 class="h5">بلاگ های اخیر</h4>
             <article *ngIf="blog[1]" class="d-flex align-items-start" style="max-width: 640px;"><a class="d-none d-sm-block flex-shrink-0 me-sm-4 mb-sm-0 mb-3" [routerLink]="['/blog/details',blog[1].id]" routerLinkActive="router-link-active" ><img class="rounded-3" src="{{imagePath}}{{blog[1].imageName}}" width="100" alt="Blog post"></a>
               <div>

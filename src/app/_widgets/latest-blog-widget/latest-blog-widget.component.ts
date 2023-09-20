@@ -7,7 +7,7 @@ import {BlogsFeatureOriginImagePth} from 'src/app/_config/pathUtility/pathTool';
   templateUrl: './latest-blog-widget.component.html',
 })
 export class LatestBlogWidgetComponent implements OnInit {
-  @Input() blogs:Observable<BlogContentDTO[]>;
+  @Input() blogs:BlogContentDTO[];
   imagePath:string = BlogsFeatureOriginImagePth;
   constructor() { }
 

@@ -41,8 +41,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), // ToastrModule added
 
-    StoreModule.forFeature('homeManagementSection', fromStore.reducers),
-    EffectsModule.forFeature(fromStore.effects),
+ 
 
     ToastrModule.forRoot(),// ToastrModule added
   ],
@@ -52,17 +51,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       useClass: Interceptor,
       multi: true,
     },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (store: Store<fromStore.HomeManagementState>) => {
-        return () => {
-          store.dispatch( fromStore.GetAllHome());
-        };
-      },
-      multi: true,
-      deps: [Store]
-    },
-    HomePageService
   ],
   bootstrap: [AppComponent],
   schemas: [
