@@ -8,6 +8,7 @@ import { RealEstateServiceWidgetComponent } from 'src/app/_widgets/real-estate-s
 import { LatestBlogWidgetComponent } from 'src/app/_widgets/latest-blog-widget/latest-blog-widget.component';
 import { LatestPropertyWidgetComponent } from 'src/app/_widgets/latest-property-widget/latest-property-widget.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { PropertySearchV1Component } from 'src/app/_widgets/property-search-v1/property-search-v1.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     PropertyTypeWidgetComponent,
     RealEstateServiceWidgetComponent,
     LatestBlogWidgetComponent,
-    LatestPropertyWidgetComponent
+    LatestPropertyWidgetComponent,
+    PropertySearchV1Component
 
   ],
   providers:[

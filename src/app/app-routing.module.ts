@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LatestBlogResolver } from './_core/_resolvers/latestBlog.resolver';
-import { SocialResolver } from './_core/_resolvers/social.resolver';
 
 const routes: Routes = [
 

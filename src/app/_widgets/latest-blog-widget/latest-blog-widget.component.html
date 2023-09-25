@@ -38,11 +38,15 @@
           <div class="d-flex"><span class="badge bg-info fs-sm">جدید</span></div>
         </div>
         <div class="card-footer content-overlay border-0 pt-0 pb-4">
-          <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" [routerLink]="['/blog/details',blog[1].id]" routerLinkActive="router-link-active">
+          <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5">
+            <a class="text-decoration-none text-light pe-2" [routerLink]="['/blog/details',blog[1].id]" routerLinkActive="router-link-active">
               <h3 class="h5 text-light mb-1">  {{blog[1].title}} </h3>
+              <!-- <h6 class="hideText text-muted">{{blog[1].text}}</h6> -->
+
               <div class="fs-sm opacity-70"><i class="fi-calendar-alt ms-1"></i> 
               {{blog[1].createDate | date :'YYYY/MM/dd'}}  
-              </div></a>
+              </div>
+            </a>
               <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" [routerLink]="['/blog/details',blog[1].id]" routerLinkActive="router-link-active"  style="height: 2.75rem;">مشاهده
                 <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><i class="fi-chevrons-left"></i></a>
               </div>

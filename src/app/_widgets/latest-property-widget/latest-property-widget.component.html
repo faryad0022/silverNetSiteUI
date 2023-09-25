@@ -1,6 +1,6 @@
 <section class="container mb-5 pb-md-4" *ngIf="properties">
   <div class="d-flex align-items-center justify-content-between mb-3">
-    <h2 class="h3 mb-0 ">خانه های ویژه ما</h2><a class="btn btn-link fw-normal p-0" href="real-estate-catalog-rent.html">مشاهده همه <i class="fi-arrow-long-left ms-2"></i></a>
+    <h2 class="h3 mb-0 ">خانه های ویژه ما</h2><a class="btn btn-link fw-normal p-0" [routerLink]="['/property/list']" routerLinkActive="router-link-active" >مشاهده همه <i class="fi-arrow-long-left ms-2"></i></a>
   </div>
     <div class="row gx-4 mx-0 pt-3 pb-4" >
       <!-- Item-->
