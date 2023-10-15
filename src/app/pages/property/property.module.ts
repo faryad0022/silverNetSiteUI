@@ -13,15 +13,18 @@ import { PropertyDetailsWidgetComponent } from 'src/app/_widgets/property-detail
 import { PropertyFacilityWidgetComponent } from 'src/app/_widgets/property-facility-widget/property-facility-widget.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { GalleriaModule } from 'primeng/galleria';
 import { PropertyPaymentPlanWidgetComponent } from 'src/app/_widgets/property-payment-plan-widget/property-payment-plan-widget.component';
 import { PropertyVideoWidgetComponent } from 'src/app/_widgets/property-video-widget/property-video-widget.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
     PropertyRoutingModule,
     CommonModule,
     CarouselModule.forRoot(),
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    GalleriaModule,
 
   ],
   declarations: [
