@@ -1,38 +1,50 @@
 <section class="container search">
 
-  <form class="form-group d-block">
+  <form class="form-group d-block" [formGroup]="searchForm">
     <div class="row g-0">
       <div class="col-md-10 d-sm-flex align-items-center">
-        <div class="dropdown w-sm-50 border-end-sm" data-bs-toggle="select">
-          <button class="btn btn-lg btn-link dropdown-toggle ps-2 ps-sm-3" type="button" data-bs-toggle="dropdown"><i
-              class="fi-list me-2"></i><span class="dropdown-toggle-label">نوع قرارداد</span></button>
-          <input type="hidden">
-          <ul class="dropdown-menu">
-            <li *ngFor="let contractType of contractTypes"><a class="dropdown-item" href="#"><span class="dropdown-item-label">{{contractType.contractType}}</span></a></li>
-          </ul>
+        <div class="col-4 d-flex flex-sm-row flex-column align-items-sm-center">
+          <label class="d-inline-block ms-sm-2 mb-sm-0 mb-2 text-nowrap text-primary"><i class="fi-pencil me-2"></i>نوع قرارداد </label>
+          <select class="form-select w-100" formControlName="selectedContractType">
+            <option value="null" disabled>انتخاب کنید</option>
+            <option 
+              *ngFor="let contractType of contractTypes" 
+              value="{{contractType.id}}"
+              >
+              {{contractType.contractType}}
+            </option>
+          </select>
         </div>
         <hr class="d-sm-none my-2">
-        <div class="dropdown w-sm-50 border-end-sm" data-bs-toggle="select">
-          <button class="btn btn-lg btn-link dropdown-toggle ps-2 ps-sm-3" type="button" data-bs-toggle="dropdown">
-            <i class="fi-home me-2"></i><span class="dropdown-toggle-label">نوع ملک</span></button>
-          <input type="hidden">
-          <ul class="dropdown-menu">
-            <li *ngFor="let propertyType of propertyTypes"><a class="dropdown-item" href="#"><span class="dropdown-item-label">{{propertyType.type}}</span></a></li>
-          </ul>
+        <div class="col-4 d-flex flex-sm-row flex-column align-items-sm-center">
+          <label class="d-inline-block ms-sm-2 mb-sm-0 mb-2 text-nowrap text-primary" ><i class="fi-building me-2"></i>نوع ملک </label>
+          <select class="form-select" formControlName="selectedPropertyType">
+            <option value="null" disabled>انتخاب کنید</option>
+            <option 
+              *ngFor="let propertyType of propertyTypes" 
+              value="{{propertyType.id}}"
+              >
+              {{propertyType.type}}
+            </option>
+          </select>
         </div>
         <hr class="d-sm-none my-2">
-        <div class="dropdown w-sm-50" data-bs-toggle="select">
-          <button class="btn btn-lg btn-link dropdown-toggle ps-2 ps-sm-3" type="button" data-bs-toggle="dropdown">
-            <i class="fi-map-pin me-2"></i><span class="dropdown-toggle-label">شهر </span></button>
-          <input type="hidden">
-          <ul class="dropdown-menu">
-            <li *ngFor="let city of cities"><a class="dropdown-item"><span class="dropdown-item-label">{{city.cityName}}</span></a></li>
-          </ul>
+        <div class="col-4 d-flex flex-sm-row flex-column align-items-sm-center">
+          <label class="d-inline-block ms-sm-2 mb-sm-0 mb-2 text-nowrap text-primary"><i class="fi-map-pin me-2"></i> شهر </label>
+          <select class="form-select" formControlName="selectedCity">
+            <option value="null" disabled>انتخاب کنید</option>
+            <option 
+              *ngFor="let city of cities" 
+              value="{{city.id}}"
+              >
+              {{city.cityName}}
+            </option>
+          </select>
         </div>
       </div>
       <hr class="d-md-none mt-2">
       <div class="col-md-2 d-sm-flex align-items-center pt-3 pt-md-0">
-        <button class="btn btn-lg btn-icon btn-primary px-3 w-100" type="button">جستجو</button>
+        <button class="btn btn-lg btn-icon btn-primary px-3 w-100" (click)="handleSearch()" [disabled]="searchForm.invalid" type="button">جستجو</button>
       </div>
     </div>
   </form>

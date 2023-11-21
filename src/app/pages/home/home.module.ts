@@ -9,12 +9,20 @@ import { LatestBlogWidgetComponent } from 'src/app/_widgets/latest-blog-widget/l
 import { LatestPropertyWidgetComponent } from 'src/app/_widgets/latest-property-widget/latest-property-widget.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { PropertySearchV1Component } from 'src/app/_widgets/property-search-v1/property-search-v1.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
+import { StyleClassModule } from 'primeng/styleclass';
+import { FocusTrapModule } from 'primeng/focustrap';
 @NgModule({
   imports: [
     HomeRoutingModule,
     CommonModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    DropdownModule,
+    StyleClassModule,
+    FocusTrapModule
   ],
   declarations: [
     HomeComponent,

@@ -5,6 +5,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { BlogDetailsResolver } from 'src/app/_core/_resolvers/blog-details.resolver';
 import { LatestBlogResolver } from 'src/app/_core/_resolvers/latestBlog.resolver';
+import { BlogGroupsResolver } from 'src/app/_core/_resolvers/blog-groups.resolver';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
     component: BlogComponent,
     children: [
       { path: 'list/:blogGroupId', component: BlogListComponent },
-      { path: 'list', component: BlogListComponent },
+      { path: 'list', component: BlogListComponent, resolve:{blogGroups: BlogGroupsResolver} },
       { path: 'details/:blogId', component: BlogDetailsComponent, resolve: {blog: BlogDetailsResolver, latestBlog: LatestBlogResolver} },
 
       { path: '**', redirectTo: 'error' },

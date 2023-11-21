@@ -6,6 +6,7 @@ import { BannerDTO } from 'src/app/_core/data/banner/bannerDTO';
 import { BlogContentDTO } from 'src/app/_core/data/blogContent/blogContentDTO';
 import { CityDTO } from 'src/app/_core/data/city/cityDTO';
 import { ContractTypeDTO } from 'src/app/_core/data/contractType/contractTypeDTO';
+import { FilterPropertyDTO } from 'src/app/_core/data/property/filterPropertyDTO';
 import { PropertyDTO } from 'src/app/_core/data/property/propertyDTO';
 import { PropertyTypeDTO } from 'src/app/_core/data/propertyType/propertyTypeDTO';
 import { RealEstateServiceDTO } from 'src/app/_core/data/realestate-service/realestateServiceDTO';
@@ -41,6 +42,11 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
       )
     );
+  }
+  search(filter:FilterPropertyDTO)
+  {
+    console.log(filter);
+    
   }
   ngOnDestroy(): void {
     this.subManager.unsubscribe();

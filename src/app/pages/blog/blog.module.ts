@@ -9,11 +9,14 @@ import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     BlogRoutingModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     BlogComponent,

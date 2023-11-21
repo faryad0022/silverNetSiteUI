@@ -9,7 +9,7 @@
   </nav>
 </div>
 <div class="container mt-5 mb-md-4 py-5">
-<app-blog-search-widget></app-blog-search-widget>
+<app-blog-search-widget (filterBlog)="filterBlog($event)" [blogGroups] = "blogGroups"></app-blog-search-widget>
 <app-blog-list-widget></app-blog-list-widget>
 
 </div>

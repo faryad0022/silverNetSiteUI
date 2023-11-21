@@ -1,6 +1,6 @@
 <app-banner-widget *ngIf="banners" [banners]="banners"></app-banner-widget>
-<app-property-search-v1 [cities]="cities" [contractTypes]="contractTypes" [propertyTypes]="propertyTypes"></app-property-search-v1>
-<app-property-type-widget [propertyTypes]="propertyTypes"></app-property-type-widget>
+<app-property-search-v1 (search)="search($event)" [cities]="cities" [contractTypes]="contractTypes" [propertyTypes]="propertyTypes"></app-property-search-v1>
+<app-property-type-widget    [propertyTypes]="propertyTypes"></app-property-type-widget>
 <app-latest-property-widget *ngIf="properties" [properties]="properties"></app-latest-property-widget>
 <app-latest-blog-widget *ngIf="blogs" [blogs]="blogs"></app-latest-blog-widget>
 <app-real-estate-service-widget [services]="services" [serviceImagePath]="serviceImagePath"> </app-real-estate-service-widget>
