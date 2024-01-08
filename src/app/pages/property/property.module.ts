@@ -17,6 +17,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { PropertyPaymentPlanWidgetComponent } from 'src/app/_widgets/property-payment-plan-widget/property-payment-plan-widget.component';
 import { PropertyVideoWidgetComponent } from 'src/app/_widgets/property-video-widget/property-video-widget.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { BrowserModule } from '@angular/platform-browser';
     CarouselModule.forRoot(),
     AlertModule.forRoot(),
     GalleriaModule,
-
+    FormsModule,
+    
   ],
   declarations: [
     PropertyComponent,

@@ -6,13 +6,26 @@ import { PropertyDetailsComponent } from './property-details/property-details.co
 import { PropertyDetailsResolver } from 'src/app/_core/_resolvers/property-details.resolver';
 import { PropertyGalleryResolver } from 'src/app/_core/_resolvers/property-gallery.resolver';
 import { PropertyVideoResolver } from 'src/app/_core/_resolvers/property-video.resolver';
+import { CityResolver } from 'src/app/_core/_resolvers/city.resolver';
+import { LatestPropertyResolver } from 'src/app/_core/_resolvers/latestProperty.resolver';
+import { PropertyContractTypeResolver } from 'src/app/_core/_resolvers/propertyContractType.resolver';
+import { PropertyTypeResolver } from 'src/app/_core/_resolvers/propertyType.resolver';
 
 const routes: Routes = [
   {
     path: '',
     component: PropertyComponent,
     children: [
-      { path: 'list', component: PropertyListComponent },
+      {
+        path: 'list', 
+        component: PropertyListComponent,   
+        resolve: {
+          latestProperty: LatestPropertyResolver,
+          contractType: PropertyContractTypeResolver,
+          propertyType: PropertyTypeResolver,
+          cities: CityResolver,
+        } 
+      },
       {
         path: 'details/:propertyId',
         component: PropertyDetailsComponent,

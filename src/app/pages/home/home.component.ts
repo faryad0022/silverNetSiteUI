@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { RealEstateServiceOriginImagePth } from 'src/app/_config/pathUtility/pathTool';
+import { PropertyService } from 'src/app/_core/_services/property.service';
 import { BannerDTO } from 'src/app/_core/data/banner/bannerDTO';
 import { BlogContentDTO } from 'src/app/_core/data/blogContent/blogContentDTO';
 import { CityDTO } from 'src/app/_core/data/city/cityDTO';
@@ -26,7 +27,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   services: RealEstateServiceDTO[];
   subManager = new Subscription();
   constructor(
-    private activatedRote: ActivatedRoute
+    private activatedRote: ActivatedRoute,
+    private propertyService: PropertyService,
+    private route:Router
   ) { }
   ngOnInit() {
     this.subManager.add(
@@ -43,10 +46,11 @@ export class HomeComponent implements OnInit, OnDestroy {
       )
     );
   }
+
   search(filter:FilterPropertyDTO)
   {
-    console.log(filter);
-    
+    this.propertyService.setFilterValues(filter);    
+    this.route.navigate(['property/list']); 
   }
   ngOnDestroy(): void {
     this.subManager.unsubscribe();

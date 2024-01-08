@@ -12,5 +12,7 @@ export class PropertyTypeWidgetComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  searchbyPropertyType(){
+    
+  }
 }

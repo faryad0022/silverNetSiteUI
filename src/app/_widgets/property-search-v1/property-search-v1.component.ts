@@ -11,9 +11,9 @@ import { PropertyTypeDTO } from 'src/app/_core/data/propertyType/propertyTypeDTO
   styleUrls: ['./property-search-v1.component.css']
 })
 export class PropertySearchV1Component implements OnInit {
-  @Input() cities:CityDTO[];
-  @Input() contractTypes:ContractTypeDTO[];
-  @Input() propertyTypes:PropertyTypeDTO[];
+  @Input() cities: CityDTO[];
+  @Input() contractTypes: ContractTypeDTO[];
+  @Input() propertyTypes: PropertyTypeDTO[];
   @Output() search = new EventEmitter<FilterPropertyDTO>();
 
   selectedContractType: ContractTypeDTO | undefined;
@@ -21,7 +21,8 @@ export class PropertySearchV1Component implements OnInit {
   selectedcities: CityDTO | undefined;
   searchForm: FormGroup;
   constructor(
-    private fb:FormBuilder
+    private fb: FormBuilder,
+
   ) { }
 
   ngOnInit() {
@@ -29,29 +30,39 @@ export class PropertySearchV1Component implements OnInit {
   }
   initForm() {
     this.searchForm = this.fb.group({
-      selectedContractType: [,[Validators.required]],
-      selectedPropertyType: [,[Validators.required]],
-      selectedCity: [,[Validators.required]],
+      selectedContractType: [, [Validators.required]],
+      selectedPropertyType: [, [Validators.required]],
+      selectedCity: [, [Validators.required]],
     });
   }
-  handleSearch(){
-    if(this.searchForm.valid){
+  handleSearch() {
+
+    if (this.searchForm.valid) {
       let filter: FilterPropertyDTO = {
-         propertyDTO: [],
-         minPrice: null,
-         maxPrice:null,
-         propertyContractTypeId:this.searchForm.controls.selectedContractType.value,
-         propertyTypeId:this.searchForm.controls.selectedPropertyType.value,
-         cityId:this.searchForm.controls.selectedCity.value,
-         numberOfBedroom:null,
-         numberOfBathroom:null,
-         floorSpace:null,//متراژ
-         propertyStatus:true,//true = available , false = notavailable
+        pageId: 0,
+        pageCount: 0,
+        activePage: 0,
+        startPage: 0,
+        endPage: 0,
+        takeEntity: 0,
+        skipEntity: 0,
+        totalRecords: 0,
+        propertyDTOs: [],
+        minPrice: 0,
+        maxPrice: 0,
+        propertyContractTypeId: this.searchForm.controls.selectedContractType.value,
+        propertyTypeId: this.searchForm.controls.selectedPropertyType.value,
+        cityId: this.searchForm.controls.selectedCity.value,
+        numberOfBedroom: 0,
+        numberOfBathroom: 0,
+        floorSpace: 0,//متراژ
+        propertyStatus: true,//true = available , false = notavailable
+        count: 0
       }
-      
+
       this.search.emit(filter);
     }
-    
+
   }
 
 }

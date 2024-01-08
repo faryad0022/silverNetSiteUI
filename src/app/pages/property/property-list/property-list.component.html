@@ -2,7 +2,7 @@
   <div class="row g-0 mt-n3">
     <!-- Filters sidebar (Offcanvas on mobile)-->
     <aside class="col-lg-4 col-xl-3 border-top-lg border-end-lg shadow-sm px-3 px-xl-4 px-xxl-5 pt-lg-2">
-      <app-property-filter-aside-widget></app-property-filter-aside-widget>
+      <app-property-filter-aside-widget [cities]="cities" [contractTypes]="contractTypes" [propertyTypes]="propertyTypes" (search)="search($event)"></app-property-filter-aside-widget>
     </aside>
     <!-- Page content-->
     <div class="col-lg-8 col-xl-9 position-relative overflow-hidden pb-5 pt-4 px-3 px-xl-4 px-xxl-5">
